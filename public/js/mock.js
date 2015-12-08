@@ -6,12 +6,12 @@
 app.run(function($httpBackend) {
     var words = [
         'IQU',
-        'PERFORMANCEMARKETING',
-        'GAMEANALYTICS',
+        'PERFORMANCE MARKETING',
+        'GAME ANALYTICS',
         'HANGMAN',
-        'PEELINGTHEONION',
+        'PEELING THE ONION',
         'COHORT ANALYSIS',
-        'GAMEON',
+        'GAME ON',
     ];
 
     var word = null;
@@ -22,14 +22,14 @@ app.run(function($httpBackend) {
         masked_word = word.replace(/[^\w]/g,' / ').replace(/[\w]/g, ' _ ');
     }
 
-    // returns the current list of phones
+    // starts a new game anr return masked word
     $httpBackend.whenPOST('/new').respond(function(method, url, data) {
         word = words[Math.floor( Math.random() * words.length )].toUpperCase();
         mask()
         return [200, {word:masked_word}, {}];
     });
 
-    // adds a new phone to the phones array
+    // tries a letter and return positions when valid
     $httpBackend.whenPOST('/play').respond(function(method, url, json) {
         var data = angular.fromJson(json);
         var letter = data.letter.toUpperCase();
