@@ -15,7 +15,6 @@ app.run(function($httpBackend) {
     ];
 
     var word = null;
-
     var masked_word = null;
 
     function mask()
@@ -35,17 +34,12 @@ app.run(function($httpBackend) {
         var data = angular.fromJson(json);
         var letter = data.letter.toUpperCase();
         var findings = [];
-        var position = 0;
 
-        angular.forEach(word.split(''),function(_letter) {
-            console.log(_letter);
+        angular.forEach(word.split(''),function(_letter,position) {
             if (letter == _letter) {
                 findings.push(position);
             }
-            position++;
         });
-
-        console.log(findings);
 
         if (!findings.length) {
             return [400, {}, {}];
