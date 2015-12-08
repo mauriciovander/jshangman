@@ -19,7 +19,7 @@ app.run(function($httpBackend) {
 
     function mask()
     {
-        masked_word = word.replace(/[^\w]/g,' / ').replace(/[\w]/g, ' _ ');
+        masked_word = word.replace(/[^a-zA-Z]/g,' / ').replace(/[a-zA-Z]/g, ' _ ');
     }
 
     // starts a new game anr return masked word
