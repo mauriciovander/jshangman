@@ -46,7 +46,4 @@ app.run(function($httpBackend) {
         }
         return [200, findings, {}];
     });
-
-    $httpBackend.whenGET(/^\/templates\//).passThrough();
-
 });
