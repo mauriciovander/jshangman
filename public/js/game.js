@@ -50,7 +50,7 @@ var app = angular.module('hangman', ['ngMockE2E'])
             }
 
             // only consider uppercase
-            $scope.new_letter = $scope.new_letter.toUpperCase();
+            $scope.new_letter = $scope.new_letter.toUpperCase().replace(/[^A-Z]/g,'');
 
             // letter should be new
             if ($scope.letters[$scope.new_letter]) {
