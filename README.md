@@ -18,8 +18,9 @@ git clone https://github.com/mauriciovander/jshangman.git
 cd jshangman/public
 
 npm install 
-```
 
-- run index.php on any modern browser to play. 
+node ./node_modules/.bin/ws --spa index.html 
+
+```
 
 

@@ -28,10 +28,11 @@ var app = angular.module('hangman', ['ngMockE2E'])
 
             // create session and return word
             $http.post('/new', $scope.player )
-                .success(function(result){
+                .then(function(result){
+                    console.log(result);
                     resetAllValues();
                     $scope.game_init = true;
-                    $scope.word = result.word;
+                    $scope.word = result.data.word;
                 })
         }
 

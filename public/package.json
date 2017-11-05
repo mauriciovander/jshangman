@@ -6,7 +6,8 @@
   "dependencies": {
     "angular": "^1.4.8",
     "bootstrap": "^3.3.6",
-    "jquery": "^2.1.4"
+    "jquery": "^2.1.4",
+    "local-web-server": "^2.3.0"
   },
   "devDependencies": {},
   "scripts": {
